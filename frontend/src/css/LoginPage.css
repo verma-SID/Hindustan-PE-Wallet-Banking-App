@@ -1,0 +1,41 @@
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form .btn {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.login-form .form-check-label {
+  font-size: 16px;
+}
+
+.login-form .mt-3 a {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form .mt-3 a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,95 @@
+.blurry-background {
+  background-color: #9fcaf8;
+  min-height: 100vh;
+}
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgb(31, 13, 10);
+}
+
+.description {
+  font-size: 1rem;
+  color: #06131f;
+  margin-bottom: 30px;
+}
+.clickable-card {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clickable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.clickable-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .clickable-card {
+    margin-bottom: 20px;
+  }
+}
+
+.navbar {
+  background-color: #0a0c80;
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.navbar-brand:hover {
+  color: #e2ff63;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #e2ff63;
+}
+
+.clickable-card {
+  background-color: #282b2e;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clickable-card:hover {
+  background-color: #212022;
+}
+
+.clickable-card h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.clickable-card p {
+  color: #ffa100;
+}

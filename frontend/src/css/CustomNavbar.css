@@ -1,0 +1,63 @@
+/* Your CSS file */
+/* Customize the Navbar background color, font, and padding */
+.navbar {
+    background-color: #343a40; /* Background color of the Navbar */
+    color: #0c133f; /* Text color inside the Navbar */
+    font-size: 1rem; /* Font size of Navbar text */
+    padding: 10px 0; /* Top and bottom padding of Navbar */
+  }
+  
+  /* Customize the Navbar brand link (Wallet Banking App) */
+  .navbar-brand {
+    font-size: 1.5rem; /* Font size of the brand text */
+    font-weight: bold; /* Bold font for the brand text */
+    color: #fff; /* Text color of the brand text */
+    text-decoration: none !important; /* Remove underlines from the brand link */
+  }
+  
+  /* Customize the Navbar links in the navigation menu */
+  .nav-link {
+    color: #fff !important; /* Text color of the links */
+    font-weight: 500; /* Font weight of the links */
+    margin-right: 15px; /* Right margin between links */
+    text-decoration: none !important; /* Remove underlines from the links */
+    transition: color 0.2s ease-in-out; /* Smooth transition for link color */
+  }
+  
+  /* Change link color on hover */
+  .nav-link:hover {
+    color: #ffc107 !important; /* Link color on hover */
+  }
+  
+  /* Customize the Navbar Toggle button */
+  .navbar-toggler-icon {
+    background-color: #fff; /* Color of the toggle button bars */
+  }
+  
+  /* Customize the Navbar Dropdown menu */
+  .navbar-nav .nav-item .dropdown-menu {
+    background-color: #343a40; /* Background color of the dropdown menu */
+    border: none; /* Remove borders from the dropdown menu */
+  }
+  
+  /* Customize the Navbar Dropdown items */
+  .nav-item .dropdown-menu .dropdown-item {
+    color: #fff !important; /* Text color of dropdown items */
+  }
+  
+  /* Change dropdown item color on hover */
+  .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #6c757d; /* Background color on hover */
+    color: #fff !important; /* Text color on hover */
+  }
+  
+  /* Customize the Navbar Logout button */
+  .nav-link.logout-button {
+    color: #dc3545 !important; /* Text color of the Logout button */
+  }
+  
+  /* Change Logout button color on hover */
+  .nav-link.logout-button:hover {
+    color: #ff0000 !important; /* Text color on hover */
+  }
+  

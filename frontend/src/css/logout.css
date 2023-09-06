@@ -1,0 +1,71 @@
+.logout-button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #d35c54;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logout-container {
+  position: relative;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #d84315;
+}
+
+.confirmation-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+.confirmation-dialog p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.confirmation-button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirmation-button:hover {
+  background-color: #d84315;
+}
