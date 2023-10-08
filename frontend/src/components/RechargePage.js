@@ -46,9 +46,12 @@ const RechargePage = () => {
           <h2 className="recharge-title">Recharge Wallet</h2>
           <form onSubmit={handleRecharge}>
             <div className="mb-3">
-              <label className="form-label">Amount:</label>
+              <label className="form-label" htmlFor="amountInput">
+                Amount:
+              </label>
               <input
                 type="number"
+                id="amountInput" // Add an id to the input element
                 className="form-control"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}

@@ -20,7 +20,7 @@ const CashbackPage = () => {
       .catch((error) => {
         console.error("Error fetching cashbacks:", error);
       });
-  }, []);
+  }, [userEmail]);
 
   // Function to format a date as a readable string
   const formatDate = (dateString) => {

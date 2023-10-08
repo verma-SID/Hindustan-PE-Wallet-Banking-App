@@ -1,66 +1,61 @@
-
-
-/* Add this CSS to your stylesheet or CSS file */
 .transaction-tiles {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Adjust the gap between tiles */
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-left: 20px;
+}
 
-    padding-left: 20px; 
-  }
-  
-  h3{
-    padding-left: 20px;
-    color: black;
-  }
+h3 {
+  padding-left: 20px;
+  color: black;
+}
 
-  .transaction-tile {
-    background-color: #f0f0f0; /* Background color for each tile */
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: 200px; /* Adjust the width of each tile */
-    height: 100px; /* Adjust the height of each tile */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem; /* Adjust the font size for the text */
-  }
-  
-  .transaction-tile:hover {
-    background-color: #e0e0e0; /* Background color on hover */
-  }
-  
-  .transaction-email {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-  }
+.transaction-tile {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: auto; 
+  height: 80px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  
-  
 
-  /* Your CSS file, e.g., styles.css */
+.transaction-tile:hover {
+  background-color: #e0e0e0;
+}
+
+.transaction-email {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
 .my-button {
-    background-color: #007bff; /* Blue background color */
-    color: white; /* White text color */
-    padding: 10px 20px; /* Padding around the button */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Add pointer cursor on hover */
-  }
-  
-  .my-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .my-paragraph {
-    font-size: 18px; /* Font size for the paragraph */
-    font-weight: bold; /* Bold text */
-    color: #333; /* Dark text color */
-    margin-top: 10px; /* Margin spacing at the top */
-  }
-    
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.my-button:hover {
+  background-color: #0056b3;
+}
+
+.my-paragraph {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}

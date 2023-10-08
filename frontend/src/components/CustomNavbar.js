@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import "../css/CustomNavbar.css"
+import "../css/CustomNavbar.css";
 
 const CustomNavbar = () => {
   const isLoggedIn = localStorage.getItem("userEmail") !== null;
@@ -10,9 +10,7 @@ const CustomNavbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("userEmail");
-    localStorage.removeItem("userPassword");
-
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -48,9 +46,7 @@ const CustomNavbar = () => {
           <Nav>
             {isLoggedIn ? (
               <>
-                <Nav.Link onClick={handleLogout}>
-                  Logout
-                </Nav.Link>
+                <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
               </>
             ) : (
               <>

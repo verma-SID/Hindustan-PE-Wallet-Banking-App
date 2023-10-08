@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import CustomNavbar from "./CustomNavbar";
-import "../css/ViewAccountStatement.css"
+import "../css/ViewAccountStatement.css";
 
 const ViewAccountStatement = () => {
   const [transactions, setTransactions] = useState([]);
   const [userEmail, setUserEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  useEffect(() => {
-    setUserEmail(localStorage.getItem("userEmail"));
-  }, []);
-
-  useEffect(() => {
-    if (userEmail) {
-      fetchAccountStatement();
-    }
-  }, [userEmail]);
-
-  const fetchAccountStatement = async () => {
+  const fetchAccountStatement = useCallback(async () => {
     try {
       const response = await axios.get(
         `http://localhost:8080/${userEmail}/transactions`
@@ -26,6 +18,31 @@ const ViewAccountStatement = () => {
       setTransactions(response.data);
     } catch (error) {
       console.error("Error fetching account statement:", error);
+    }
+  }, [userEmail]);
+
+  useEffect(() => {
+    setUserEmail(localStorage.getItem("userEmail"));
+  }, [userEmail, fetchAccountStatement]);
+
+  useEffect(() => {
+    if (userEmail) {
+      fetchAccountStatement();
+    }
+  }, [fetchAccountStatement, userEmail]);
+
+  const handleSendStatementClick = async () => {
+    try {
+      console.log("Clicked");
+      const response = await axios.post(
+        `http://localhost:8080/${userEmail}/send-account-statement`
+      );
+      console.log("Successfully email sent");
+      setSuccessMessage("Account statement sent successfully.");
+      setErrorMessage("");
+    } catch (error) {
+      setErrorMessage("Failed to send account statement.");
+      setSuccessMessage("");
     }
   };
 
@@ -42,9 +59,20 @@ const ViewAccountStatement = () => {
     return new Date(dateTimeString).toLocaleDateString(undefined, options);
   };
 
-  const sortedTransactions = [...transactions].sort((a, b) =>
-    new Date(b.localDateTime) - new Date(a.localDateTime)
+  const sortedTransactions = [...transactions].sort(
+    (a, b) => new Date(b.localDateTime) - new Date(a.localDateTime)
   );
+
+  const renderSendStatementButton = () => {
+    if (transactions.length > 0) {
+      return (
+        <button className="btn btn-primary" onClick={handleSendStatementClick}>
+          Send Account Statement on Mail
+        </button>
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
@@ -71,6 +99,19 @@ const ViewAccountStatement = () => {
             ))}
           </tbody>
         </table>
+
+        {renderSendStatementButton()}
+
+        {successMessage && (
+          <div className="alert alert-success" style={{ marginTop: "20px" }}>
+            {successMessage}
+          </div>
+        )}
+        {errorMessage && (
+          <div className="alert alert-danger" style={{ marginTop: "20px" }}>
+            {errorMessage}
+          </div>
+        )}
       </div>
     </div>
   );

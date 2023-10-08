@@ -27,7 +27,9 @@ const Logout = () => {
                 <div className="confirmation-dialog">
                     <p>Are you sure you want to logout?</p>
                     <button className="confirmation-button" onClick={handleLogout}>Logout</button>
-                    <button className="confirmation-button" onClick={handleCancel}>Cancel</button>
+                    <button className="c handleLogout = () => {
+        localStorage.clear('userEmail');
+        navigate('/login');onfirmation-button" onClick={handleCancel}>Cancel</button>
                 </div>
             )}
         </div>

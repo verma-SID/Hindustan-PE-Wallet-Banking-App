@@ -69,8 +69,11 @@ const TransferPage = () => {
           </h2>
           <form onSubmit={handleTransfer}>
             <div className="mb-3">
-              <label className="form-label">Destination Email:</label>
+              <label htmlFor="destinationEmailInput" className="form-label">
+                Destination Email:
+              </label>
               <input
+                id="destinationEmailInput"
                 type="email"
                 value={destinationEmail}
                 className="form-control"
@@ -79,8 +82,11 @@ const TransferPage = () => {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Amount:</label>
+              <label htmlFor="amountInput" className="form-label">
+                Amount:
+              </label>
               <input
+                id="amountInput"
                 type="number"
                 className="form-control"
                 value={amount}
@@ -88,6 +94,7 @@ const TransferPage = () => {
                 required
               />
             </div>
+
             <button
               type="submit"
               className="btn btn-primary btn-block transfer-button"

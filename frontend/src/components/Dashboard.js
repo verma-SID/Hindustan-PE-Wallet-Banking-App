@@ -8,7 +8,7 @@ import "../css/Dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [currentBalance, setCurrentBalance] = useState(null); // State variable to store the current balance
+  const [currentBalance, setCurrentBalance] = useState(null);
   const [recentTransactions, setRecentTransactions] = useState([]);
 
   const isLoggedIn = localStorage.getItem("userEmail") !== null;

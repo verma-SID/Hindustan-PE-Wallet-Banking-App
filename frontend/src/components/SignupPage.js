@@ -11,8 +11,8 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [isSignupSuccess, setIsSignupSuccess] = useState(false);
   const [message, setMessage] = useState("");
-  const [emailError, setEmailError] = useState(""); // New state variable for email error
-  const [passwordError, setPasswordError] = useState(""); // New state variable for password error
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -26,10 +26,14 @@ const SignupPage = () => {
     return password.length >= 4;
   };
 
+  const validateName = (name) => {
+    const namePattern = /^[a-zA-Z]+$/;
+    return namePattern.test(name);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate email and password
     if (!validateEmail(email)) {
       setEmailError("Invalid email address");
       return;
@@ -37,6 +41,16 @@ const SignupPage = () => {
 
     if (!validatePassword(password)) {
       setPasswordError("Password must be at least 4 characters long");
+      return;
+    }
+
+    if (!validateName(firstName)) {
+      setEmailError("First name should contain only alphabets");
+      return;
+    }
+
+    if (!validateName(lastName)) {
+      setEmailError("Last name should contain only alphabets");
       return;
     }
 
@@ -54,14 +68,14 @@ const SignupPage = () => {
       setLastName("");
       setEmail("");
       setPassword("");
-      setEmailError(""); 
-      setPasswordError(""); 
+      setEmailError("");
+      setPasswordError("");
 
       window.alert("Successfully signed up! Redirecting to LoginPage...");
 
       navigate("/login");
     } catch (error) {
-      setMessage("Error occurred during registration");
+      setMessage("User Already Exists. Please Login !!");
     }
   };
 
@@ -85,7 +99,12 @@ const SignupPage = () => {
                 type="text"
                 className="form-control"
                 value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (validateName(value) || value === "") {
+                    setFirstName(value);
+                  }
+                }}
                 required
               />
             </div>
@@ -97,7 +116,12 @@ const SignupPage = () => {
                 type="text"
                 className="form-control"
                 value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (validateName(value) || value === "") {
+                    setLastName(value);
+                  }
+                }}
                 required
               />
             </div>
@@ -111,13 +135,11 @@ const SignupPage = () => {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  setEmailError(""); // Clear email error on change
+                  setEmailError("");
                 }}
                 required
               />
-              {emailError && (
-                <p className="error-message">{emailError}</p>
-              )}
+              {emailError && <p className="error-message">{emailError}</p>}
             </div>
             <div className="mb-3">
               <label className="form-label" data-testid="password">
@@ -129,7 +151,7 @@ const SignupPage = () => {
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  setPasswordError(""); // Clear password error on change
+                  setPasswordError("");
                 }}
                 required
               />

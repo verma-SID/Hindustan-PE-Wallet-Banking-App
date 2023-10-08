@@ -33,7 +33,4 @@ describe('CustomNavbar Component', () => {
     const dashboardLink = screen.getByText('Dashboard');
     expect(dashboardLink).toBeInTheDocument();
   });
-
-
-  // Add more test cases as needed
 });
